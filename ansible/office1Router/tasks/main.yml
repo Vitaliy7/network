@@ -1,0 +1,7 @@
+---
+# tasks file for office1Router
+- name: set up forward packages across routers
+  sysctl:
+    name: net.ipv4.conf.all.forwarding
+    value: '1'
+    state: present

@@ -1,0 +1,17 @@
+---
+# tasks file for centralRouter
+- name: set up forward packages across routers
+  sysctl:
+    name: net.ipv4.conf.all.forwarding
+    value: '1'
+    state: present
+    
+- name: disable default route
+  lineinfile:
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+    line: DEFROUTE=no
+    
+- name: add default gateway for centralRouter
+  lineinfile:
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth1
+    line: GATEWAY=192.168.255.1

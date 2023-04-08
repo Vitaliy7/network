@@ -1,0 +1,9 @@
+---
+# tasks file for office2Server
+- name: set up route on office2Server
+  template:
+    src: interfaces
+    dest: /etc/network/interfaces
+    owner: root
+    group: root
+    mode: 0644

@@ -1,0 +1,23 @@
+---
+# tasks file for inetRouter
+- name: install iptables
+  yum:
+    name:
+    - iptables
+    - iptables-services
+    state: present
+    update_cache: true
+    
+- name: copy iptables config
+  template:
+    src: iptables
+    dest: /etc/sysconfig/iptables
+    owner: root
+    group: root
+    mode: 0600
+    
+- name: set up forward packages across routers
+  sysctl:
+    name: net.ipv4.conf.all.forwarding
+    value: '1'
+    state: present

@@ -1,0 +1,9 @@
+---
+# tasks file for office1Server
+- name: set up route on office1Server
+  template:
+    src: 50-vagrant.yaml
+    dest: /etc/netplan/50-vagrant.yaml
+    owner: root
+    group: root
+    mode: 0644

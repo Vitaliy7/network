@@ -1,0 +1,51 @@
+---
+  - name: install & configure centralServer
+    hosts: centralServer
+    become: yes
+  
+    roles: 
+     - centralServer
+     
+  - name: install & configure office1Router
+    hosts: office1Router
+    become: yes
+  
+    roles: 
+     - office1Router
+     
+  - name: install & configure inetRouter
+    hosts: inetRouter
+    become: yes
+  
+    roles: 
+     - inetRouter
+     
+  - name: install & configure office1Server
+    hosts: office1Server
+    become: yes
+  
+    roles: 
+     - office1Server
+     
+  - name: install & configure office2Server
+    hosts: office2Server
+    become: yes
+  
+    roles: 
+     - office2Server
+     
+  - name: install & configure office2Router
+    hosts: office2Router
+    become: yes
+  
+    roles: 
+     - office2Router
+     
+  - name: install & configure centralRouter
+    hosts: centralRouter
+    become: yes
+  
+    roles: 
+     - centralRouter
+     
+...     
